@@ -36,14 +36,21 @@ const images = [
 
 const ComicViewer = () => {
     const [currentPage, setCurrentPage] = useState(0);
-    const [typedText, setTypedText] = useState("T");
+    const [typedText, setTypedText] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // Reset typedText when the page changes
+        images.forEach((image) => {
+            const img = new Image();
+            img.src = image.src;
+        });
+        setIsLoading(false);
+    }, []);
+
+    useEffect(() => {
         setTypedText("");
         const text = images[currentPage].description || "";
         let i = 0;
-
         const interval = setInterval(() => {
             if (i < text.length - 1) {
                 setTypedText((prev) => prev + text[i]);
@@ -51,34 +58,32 @@ const ComicViewer = () => {
             } else {
                 clearInterval(interval);
             }
-        }, 30); // Typing speed
-
-        return () => clearInterval(interval); // Cleanup on re-render
+        }, 30);
+        return () => clearInterval(interval);
     }, [currentPage]);
 
-    const nextPage = () => {
-        if (currentPage < images.length - 1) {
-            setCurrentPage(currentPage + 1);
-        }
-    };
+    const nextPage = () => currentPage < images.length - 1 && setCurrentPage(currentPage + 1);
+    const prevPage = () => currentPage > 0 && setCurrentPage(currentPage - 1);
 
-    const prevPage = () => {
-        if (currentPage > 0) {
-            setCurrentPage(currentPage - 1);
-        }
-    };
+    if (isLoading) return <div className="loading-screen">Loading comic...</div>;
 
     return (
         <div className="comic-container" style={{ "--bg-filter": images[currentPage].bgFilterColor }}>
-            <h1 className="comic-header" >Cutu & Bubbu</h1>
+            <h1 className="comic-header">Cutu & Bubbu</h1>
+            <div style={{ display: "none" }}>
+                {images.map((image, index) => <img key={index} src={image.src} alt="preload" />)}
+            </div>
             <img src={images[currentPage].src} alt={`Comic panel ${currentPage + 1}`} className="comic-panel" />
-            {images[currentPage].description && <p className="comic-description" style={{background: images[currentPage].bgTextColor}}>{typedText}</p>}
+            {images[currentPage].description && (
+                <p className="comic-description" style={{ background: images[currentPage].bgTextColor }}>
+                    {typedText}
+                </p>
+            )}
             <div className="comic-navigation">
                 <button onClick={prevPage} disabled={currentPage === 0}>Previous</button>
                 <button onClick={nextPage} disabled={currentPage === images.length - 1}>Next</button>
             </div>
         </div>
-
     );
 };
 
