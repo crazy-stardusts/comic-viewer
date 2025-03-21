@@ -5,9 +5,9 @@ import valentineImage from "../assets/valentine.webp";
 import scootyImage from "../assets/scooty.webp";
 
 const images = [
-    { src: chatImage, description: " The first time we met – a simple WhatsApp chat that changed everything.", bgFilterColor: "rgba(0, 255, 0, 0.25)" },
-    { src: valentineImage, description: " Our special Valentine's quiz, a night filled with laughter and love.", bgFilterColor: "rgba(255, 0, 0, 0.3)" },
-    { src: scootyImage, description: " Cutu falling from Scooty after seeing me.", bgFilterColor: "rgba(0, 0, 255, 0.25)" },
+    { src: chatImage, description: " The first time we met – a simple WhatsApp chat that changed everything.", bgFilterColor: "rgba(0, 255, 0, 0.25)", bgTextColor: "rgba(1, 92, 1, 0.85)" },
+    { src: valentineImage, description: " Our special Valentine's quiz, a night filled with laughter and love.", bgFilterColor: "rgba(255, 0, 0, 0.3)", bgTextColor: "rgba(255, 0, 0, 0.8)" },
+    { src: scootyImage, description: " Cutu falling from Scooty after seeing me.", bgFilterColor: "rgba(235, 243, 8, 0.25)", bgTextColor: "rgba(177, 129, 33, 0.84)" },
 ];
 
 const ComicViewer = () => {
@@ -48,7 +48,7 @@ const ComicViewer = () => {
         <div className="comic-container" style={{ "--bg-filter": images[currentPage].bgFilterColor }}>
             <h1 className="comic-header" >Cutu & Bubbu</h1>
             <img src={images[currentPage].src} alt={`Comic panel ${currentPage + 1}`} className="comic-panel" />
-            {images[currentPage].description && <p className="comic-description">{typedText}</p>}
+            {images[currentPage].description && <p className="comic-description" style={{background: images[currentPage].bgTextColor}}>{typedText}</p>}
             <div className="comic-navigation">
                 <button onClick={prevPage} disabled={currentPage === 0}>Previous</button>
                 <button onClick={nextPage} disabled={currentPage === images.length - 1}>Next</button>
