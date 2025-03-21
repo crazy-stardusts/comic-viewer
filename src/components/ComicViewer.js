@@ -15,6 +15,10 @@ import codingImage from "../assets/coding.webp";
 import bangloreImage from "../assets/banglore.webp";
 import amazonImage from "../assets/amazon.webp";
 import togetherImage from "../assets/together.webp";
+import coupleImage from "../assets/couple.webp";
+import airshowImage from "../assets/airshow.webp";
+import struggleImage from "../assets/struggle.webp";
+import chocolateImage from "../assets/chocolate.webp";
 
 const images = [
     { src: chatImage, description: " The first time Cutu & Bubby met – a simple WhatsApp chat that changed everything.", bgFilterColor: "rgba(235, 243, 8, 0.25)", bgTextColor: "rgba(177, 129, 33, 0.84)" },
@@ -25,11 +29,15 @@ const images = [
     { src: bikeImage, description: " Cutu & Bubby going to Sector-27 like daily ritual.", bgFilterColor: "rgba(235, 243, 8, 0.25)", bgTextColor: "rgba(177, 129, 33, 0.84)" },
     { src: momoImage, description: " And now can we forget the momos of Sector-27?", bgFilterColor: "rgba(255, 0, 0, 0.3)", bgTextColor: "rgba(255, 0, 0, 0.8)" },
     { src: longImage, description: " Cutu & Bubby in long distance, daily ritual of meets & calls.", bgFilterColor: "rgba(235, 243, 8, 0.25)", bgTextColor: "rgba(177, 129, 33, 0.84)" },
+    { src: coupleImage, description: " Cutu & Bubby, fighting and then always reconciling", bgFilterColor: "rgba(255, 0, 0, 0.3)", bgTextColor: "rgba(255, 0, 0, 0.8)" },
     { src: assignmentImage, description: " Cutu writing assignments for careless Bubby.", bgFilterColor: "rgba(235, 243, 8, 0.25)", bgTextColor: "rgba(177, 129, 33, 0.84)" },
     { src: dateImage, description: " Cutu & Bubby going to the infamous Sayaji date, aka, the best date ever", bgFilterColor: "rgba(255, 0, 0, 0.3)", bgTextColor: "rgba(255, 0, 0, 0.8)" },
+    { src: struggleImage, description: " Cutu & Bubby struggling in life, but always finding a way.", bgFilterColor: "rgba(235, 243, 8, 0.25)", bgTextColor: "rgba(177, 129, 33, 0.84)" },
     { src: airportImage, description: " Bubby coming over to see Cutu at Raipur.",  bgFilterColor: "rgba(235, 243, 8, 0.25)", bgTextColor: "rgba(177, 129, 33, 0.84)"},
     { src: codingImage, description: " Bubby teaching coding to Cutu.", bgFilterColor: "rgba(235, 243, 8, 0.25)", bgTextColor: "rgba(177, 129, 33, 0.84)" },
     { src: bangloreImage, description: " Cutu & Bubby in Banglore, a new chapter in our lives.", bgFilterColor: "rgba(235, 243, 8, 0.25)", bgTextColor: "rgba(177, 129, 33, 0.84)" },
+    { src: airshowImage, description: " Cutu & Bubby at Aero India, best date ever once again.", bgFilterColor: "rgba(255, 0, 0, 0.3)", bgTextColor: "rgba(255, 0, 0, 0.8)" },
+    { src: chocolateImage, description: " Cutu gifting chocolate bouquet to Bubby, insipte of her interviews", bgFilterColor: "rgba(255, 0, 0, 0.3)", bgTextColor: "rgba(255, 0, 0, 0.8)" },
     { src: amazonImage, description: " Cutu getting placed in Amazon, taking Bubby's revenge.", bgFilterColor: "rgba(255, 0, 0, 0.3)", bgTextColor: "rgba(255, 0, 0, 0.8)" },
     { src: togetherImage, description: " And now Cutu & Bubby are together, forever.", bgFilterColor: "rgba(235, 243, 8, 0.25)", bgTextColor: "rgba(177, 129, 33, 0.84)" },
 ];
